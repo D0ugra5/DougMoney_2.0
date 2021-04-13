@@ -54,9 +54,23 @@ export function NewTransactionModal({
       </button>
       <Container onSubmit={handleCreateNEwTransaction}>
         <h2>Cadastrar Transação</h2>
-        <input placeholder="Titulo" value={title} onChange={event => setTitle(event.target.value)} />
+        <input
+          required
+          placeholder="Titulo"
+          value={title}
+          onChange={event => setTitle(event.target.value)}
+          maxLength={20}
+        />
 
-        <input placeholder="Valor" type="number" value={amount} onChange={event => setAmount(Number(event.target.value))} />
+        <input
+          required
+          placeholder="Valor"
+          type="number"
+          value={amount}
+          onChange={event => setAmount(Number(event.target.value))}
+          maxLength={10}
+
+        />
         <TransactionTypeContainer>
           <RadioBox
             type='button'
@@ -77,7 +91,12 @@ export function NewTransactionModal({
             <span>Saidas</span>
           </RadioBox>
         </TransactionTypeContainer>
-        <input placeholder="categoria" value={category} onChange={event => setcategory(event.target.value)} />
+        <input
+          required
+          placeholder="categoria"
+          value={category} onChange={event => setcategory(event.target.value)}
+          maxLength={20}
+        />
 
 
         <button type="submit">Cadastrar</button>
