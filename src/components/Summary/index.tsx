@@ -12,15 +12,18 @@ export function Summary() {
     var entradas: number
     entradas = 0
     saida = 0
-    total = 0 
+    total = 0
+
+
+
     transaction.forEach((data) => {
-        if (data.type == 'Entrada') {
-            console.log(data.amount)
+
+        if (data.type === 'Entrada') {
+
             entradas += data.amount
         } else {
             saida += data.amount
         }
-
     })
     total = entradas - saida
 

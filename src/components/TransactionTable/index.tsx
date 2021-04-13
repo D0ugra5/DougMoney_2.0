@@ -1,11 +1,11 @@
-import { useContext } from "react";
-
+import React, { useContext } from "react";
+import { BiTrash } from "react-icons/bi";
 import { TransactionContext } from "../../TransactionContext";
 import { Container } from "./styles";
 
 export function TransactionTable() {
-const {transaction} = useContext(TransactionContext)
-console.log(transaction)
+const {transaction, DeleteTransaction} = useContext(TransactionContext)
+
   return (
     <Container>
       <table>
@@ -20,7 +20,7 @@ console.log(transaction)
 
         <tbody>
         {transaction.map(transactions=>(
-            <tr key={transactions.id}>
+            <tr key={transactions._id}>
             <td className="Text-title">{transactions.title}</td>
             <td className={transactions.type}>
              {new Intl.NumberFormat('pt-bt',{
@@ -32,7 +32,12 @@ console.log(transaction)
             <td>{transactions.category}</td>
             <td>{new Intl.DateTimeFormat('pt-bt').format(
               new Date(transactions.createdAt)
-            )}</td>
+            )}
+       
+            </td>
+            <td><BiTrash onClick={()=>{
+                 DeleteTransaction({_id:transactions._id})
+            }}/></td>
           </tr>
         ))}
       

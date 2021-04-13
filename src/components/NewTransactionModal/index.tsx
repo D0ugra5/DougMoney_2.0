@@ -19,8 +19,8 @@ export function NewTransactionModal({
 }: NewTransactionModalProps) {
 
 
-     const{createTransaction} = useContext(TransactionContext)
-   
+  const { createTransaction } = useContext(TransactionContext)
+
   const [title, setTitle] = useState('')
   const [amount, setAmount] = useState(0)
   const [category, setcategory] = useState('')
@@ -28,18 +28,18 @@ export function NewTransactionModal({
 
   async function handleCreateNEwTransaction(event: FormEvent) {
     event.preventDefault();
- await createTransaction({
-   title,
-   amount,
-   category,
-   type,
- })
- setTitle('');
- setAmount(0);
-setType('Entrada');
-setcategory('')
+    await createTransaction({
+      title,
+      amount,
+      category,
+      type,
+    })
+    setTitle('');
+    setAmount(0);
+    setType('Entrada');
+    setcategory('')
 
- onRequestClose()
+    onRequestClose()
   }
 
   return (
@@ -71,7 +71,7 @@ setcategory('')
             activeColor="red"
 
             type='button'
-            isActive={type === 'withdraw'}
+            isActive={type === 'Saida'}
             onClick={() => { setType('Saida') }}>
             <img src={Saidas} alt="Saida" />
             <span>Saidas</span>

@@ -27,19 +27,20 @@ table{
    
    
    
-&:first-child{
-    color:var(--text-title);
-}
+         &:first-child{
+              color:var(--text-title);
+            }
 
 
-&.Entrada{
-    color:var(--green);
-}
-&.Saida{
-    color:var(--red);
-}
-   
-   
+                &.Entrada{
+                 color:var(--green);
+                }
+             &.Saida{
+             color:var(--red);
+          }
+
+      
+
     }
 
 
@@ -47,3 +48,5 @@ table{
 }
 
 `
+
+
