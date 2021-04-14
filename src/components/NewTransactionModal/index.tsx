@@ -6,13 +6,19 @@ import Saidas from '../../assets/Saidas.svg'
 import { FormEvent, useState, useContext } from "react";
 import { api } from "../../services/api";
 import { TransactionContext } from "../../TransactionContext";
-
+import Swal from 'sweetalert2'
 
 
 interface NewTransactionModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
 }
+
+
+
+
+
+
 export function NewTransactionModal({
   isOpen,
   onRequestClose,

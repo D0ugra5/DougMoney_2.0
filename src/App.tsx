@@ -6,11 +6,10 @@ import { useEffect, useState } from "react";
 import { NewTransactionModal } from "./components/NewTransactionModal";
 import { TransactionProvider } from "./TransactionContext";
 import { api } from "./services/api";
+import { DataConsult } from "./components/DataConsult";
 
 Modal.setAppElement("#root");
 export function App() {
-
-
   const [isNewtransactionModalOpen, setisNewtransactionModalOpen] = useState(
     false
   );
@@ -24,7 +23,12 @@ export function App() {
   return (
     <TransactionProvider>
       <Header handleOpenNewTransactionModal={handleOpenNewTransactionModal} />
+
       <Dashboard />
+      <DataConsult
+        isOpen={true}
+        onRequestClose={closeOpenNewTransactionModal}
+      />
       <NewTransactionModal
         isOpen={isNewtransactionModalOpen}
         onRequestClose={closeOpenNewTransactionModal}
