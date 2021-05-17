@@ -50,3 +50,25 @@ table{
 `
 
 
+export const  BtnIconSearch = styled.button`
+
+width:6.5rem;
+margin-top:10px;
+height:2rem;
+border-radius:0.25rem;
+margin-left:3rem;
+background:#C8C8C8;
+transition:background 0.2s;
+transition: color 0.2s;
+font-weight:400;
+
+text-align:center;
+border: none;
+&:hover{
+    background:var(--black);
+    color:var(--shape);
+}
+/* background:var(--green); */
+
+`
+

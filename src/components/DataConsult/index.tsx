@@ -19,8 +19,10 @@ export const DataConsult = ({
     onRequestClose={onRequestClose}
     overlayClassName="react-modal-overlay"
     className="react-modal-content"
-  >
+  >  
+    <h1>Filtar Por:</h1>
     <Container>
+  
       <input type="text" />
       <input type="text" />
     </Container>

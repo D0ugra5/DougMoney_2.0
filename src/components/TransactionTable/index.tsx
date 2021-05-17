@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { BiTrash } from "react-icons/bi";
+import { BiTrash,BiSearchAlt } from "react-icons/bi";
+import { FaSearchDollar } from "react-icons/fa";
 import { TransactionContext } from "../../TransactionContext";
-import { Container } from "./styles";
+import { BtnIconSearch, Container } from "./styles";
 import Swal from 'sweetalert2'
 export function TransactionTable() {
 
@@ -41,6 +42,14 @@ export function TransactionTable() {
             <th>Valor</th>
             <th>Categoria</th>
             <th>Data</th>
+            
+              <BtnIconSearch
+            
+              >
+              <p> Pesquisar </p>
+         
+              </BtnIconSearch>
+              
           </tr>
         </thead>
 
